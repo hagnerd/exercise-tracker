@@ -2,7 +2,7 @@
   "name": "exercise-tracker",
   "version": "1.0.0",
   "description": "A simple microservice to track exercises",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -11,5 +11,13 @@
     "microservice"
   ],
   "author": "Matt Hagner <web@matthagner.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "cors": "^2.8.4",
+    "express": "^4.16.3",
+    "mongodb": "^3.1.1",
+    "mongoose": "^5.2.6",
+    "shortid": "^2.2.12"
+  }
 }
