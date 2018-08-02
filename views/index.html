@@ -35,13 +35,19 @@
         </h3>
         <span class="highlight">POST /api/exercise/add</span>
 
-        <label for="exercise-userid-input">UserID</label>
-        <input id="exercise-userid-input" name="userid" type="text" />
-        <label for="exercise-description-input">Description</label>
-        <input id="exercise-description-input" name="description" type="text" />
-        <label for="exercise-duration-input">Duration</label>
-        <input id="exercise-duration-input" name="duration" type="text" />
-        <label for="exercise-date-input">Date</label>
+        <label for="exercise-userid-input">UserID*
+          <span class="bold">required</span>
+        </label>
+        <input id="exercise-userid-input" name="userid" type="text" required />
+        <label for="exercise-description-input">Description*
+          <span class="bold">required</span>
+        </label>
+        <input id="exercise-description-input" name="description" type="text" required />
+        <label for="exercise-duration-input">Duration (in minutes)*
+          <span class="bold">required</span>
+        </label>
+        <input id="exercise-duration-input" name="duration" type="text" required />
+        <label for="exercise-date-input">Date (yyyy-mm-dd)</label>
         <input id="exercise-date-input" name="date" type="text" />
         <button type="submit">Submit</button>
       </form>
