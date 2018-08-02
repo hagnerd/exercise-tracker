@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>FCC Exercise Tracker</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+  <header>
+    <h1 id="website-title">FCC Exercise Tracker</h1>
+  </header>
+
+  <main>
+
+    <div class="form-area">
+
+
+      <form id="new-user-form" action="/api/exercise/new-user" method="post">
+        <h3 class="form-title">
+          Create New User
+        </h3>
+        <span class="highlight">POST /api/exercise/new-user</span>
+        <label for="new-user-input">Username</label>
+        <input id="new-user-input" name="username" type="text" placeholder="username" />
+        <button type="submit">Submit</button>
+      </form>
+
+      <form id="add-exercise-form" action="/api/exercise/add" method="post">
+        <h3 class="form-title">
+          Add exercise
+        </h3>
+        <span class="highlight">POST /api/exercise/add</span>
+
+        <label for="exercise-userid-input">UserID</label>
+        <input id="exercise-userid-input" name="userid" type="text" />
+        <label for="exercise-description-input">Description</label>
+        <input id="exercise-description-input" name="description" type="text" />
+        <label for="exercise-duration-input">Duration</label>
+        <input id="exercise-duration-input" name="duration" type="text" />
+        <label for="exercise-date-input">Date</label>
+        <input id="exercise-date-input" name="date" type="text" />
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+
+    <div id="get-exercise-log" class="exercise-log">
+      <p>
+        <span class="bold">GET user's exercise log:</span>
+        <span class="highlight">GET /api/exercise/log?{userId}[&from][&to]&[limit]</span>
+      </p>
+      <p>
+        <span class="bold">{}</span> = required,
+        <span class="bold">[]</span> = optional</p>
+      <p>
+        <span class="bold">from, to</span> = dates (yyyy-mm-dd);
+        <span class="bold">limit</span> = number</p>
+
+    </div>
+
+  </main>
+
+  <footer>
+
+  </footer>
+</body>
+
+</html>
