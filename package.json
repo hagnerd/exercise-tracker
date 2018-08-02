@@ -1,0 +1,15 @@
+{
+  "name": "exercise-tracker",
+  "version": "1.0.0",
+  "description": "A simple microservice to track exercises",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "freecodecamp",
+    "microservice"
+  ],
+  "author": "Matt Hagner <web@matthagner.com>",
+  "license": "MIT"
+}
