@@ -1,14 +1,14 @@
-const mongoose = require('mongoose');
-const shortid = require('shortid');
+const mongoose = require("mongoose");
+const shortid = require("shortid");
 const Schema = mongoose.Schema;
 
 const UserSchema = new Schema({
   _id: {
     type: String,
-    default: shortid.generate(),
+    default: shortid.generate()
   },
   username: String,
-  exercises: [{type: Schema.Types.ObjectId, ref: 'Exercise' }]
+  exercises: [{ type: String, ref: "Exercise" }]
 });
 
-module.exports = mongoose.model('User', UserSchema);
+module.exports = mongoose.model("User", UserSchema);
