@@ -1,4 +1,7 @@
 const isDate = require("date-fns/is_date");
+const format = require("date-fns/format");
+const parse = require("date-fns/parse");
+
 const Exercise = require("../models/exercise");
 const User = require("../models/user");
 
@@ -12,21 +15,22 @@ const addNewExercise = async (req, res) => {
   try {
     // Check if the userid exists in the database
     let foundUser = await userExists(req.body.userid);
-    console.log(foundUser);
 
-    let formattedDate;
-
-    if (isDate(date)) {
-      formattedDate = date;
-    } else {
-      formattedDate = new Date();
+    if (!foundUser) {
+      res.json({
+        error: "No user found"
+      });
     }
+
+    const _date = isDate(parse(date)) ? date : format(new Date(), "YYYY-MM-DD");
+
+    console.log(_date);
 
     const exercise = new Exercise({
       userId: foundUser._id,
       description,
       duration,
-      date: formattedDate
+      date: _date
     });
 
     const submittedExercise = await exercise.save();
