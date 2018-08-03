@@ -2,8 +2,17 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const cors = require("cors");
 const mongoose = require("mongoose");
-const app = express();
+
+/* Routes */
+const newUserRoute = require("./routes/new-user");
+const addExerciseRoute = require("./routes/add");
+const logExerciseRoute = require("./routes/log");
+
+// Required for environment variables
 require("dotenv").config();
+
+// Create express app
+const app = express();
 
 /* Connect to MongoDB on MLAB */
 mongoose.connect(
@@ -25,6 +34,13 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 app.use(express.static("public"));
+
+/* New User Router */
+app.use("/api/exercise/new-user", newUserRoute);
+/* New Exercise Router */
+app.use("/api/exercise/add", addExerciseRoute);
+/* Log Exercise Router */
+app.use("/api/exercise/log", logExerciseRoute);
 
 /* Index Route */
 app.get("/", (_, res) => {
